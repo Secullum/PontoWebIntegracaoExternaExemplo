@@ -3,6 +3,7 @@ using PontoWebIntegracaoExterna.Modelos;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -28,7 +29,7 @@ namespace PontoWebIntegracaoExterna
                 password = senha,
                 client_id = CLIENT_ID_PONTOWEB
             };
-            
+
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.Autenticador, "/Token", "POST", pedido);
 
             AutenticacaoResposta resposta = new AutenticacaoResposta();
@@ -41,17 +42,18 @@ namespace PontoWebIntegracaoExterna
                 resposta.erro = true;
                 resposta.mensagem = respHttp.Conteudo;
             }
-            
+
             return resposta;
         }
 
         public AutenticacaoDadosDaContaResposta BuscaDadosContaSecullum(string access_token)
         {
+            AccessTokenSelecionado = access_token;
+
             var pedido = new
             {
                 token = access_token
             };
-
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.Autenticador, "/ReinvidicacoesToken", "POST", pedido);
 
@@ -65,6 +67,22 @@ namespace PontoWebIntegracaoExterna
             {
                 resposta.erro = true;
                 resposta.mensagem = respHttp.Conteudo;
+            }
+
+            var respostaHttpListaBancos = FazRequisicaoHttp(TipoWebServiceSecullum.Autenticador, "/ContasSecullumExterno/ListarBancos/", "GET", null);
+
+            if (respostaHttpListaBancos.CodigoHttp == HttpStatusCode.OK)
+            {
+                var listaBancos = JsonConvert.DeserializeObject<List<Banco>>(respostaHttpListaBancos.Conteudo);
+
+                // ClienteId 3 = valor fixo
+                resposta.listaBancos = listaBancos.Where(x => x.clienteId == "3").Select(x => new Banco
+                {
+                    id =x.id,
+                    nome = x.nome,
+                    clienteId= x.clienteId,
+                    identificador = Guid.Parse(x.identificador).ToString("N")
+                }).ToList();
             }
 
             return resposta;
@@ -332,7 +350,7 @@ namespace PontoWebIntegracaoExterna
 
             return null;
         }
-        
+
         internal List<dynamic> ListarFuncionarios(string pis)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Funcionarios?pis=" + pis, "GET", null);
@@ -390,7 +408,7 @@ namespace PontoWebIntegracaoExterna
                 request.ServicePoint.Expect100Continue = false;
                 request.ContentLength = 0;
 
-                if (webservice== TipoWebServiceSecullum.Autenticador)
+                if (webservice== TipoWebServiceSecullum.Autenticador )
                 {
                     request.ContentType = "application/x-www-form-urlencoded";
                 }
@@ -398,8 +416,12 @@ namespace PontoWebIntegracaoExterna
                 {
                     request.ContentType = "application/json; charset=utf-8";
                     request.Headers["Accept-Language"] = "pt-BR";
-                    request.Headers["Authorization"] = $"Bearer {AccessTokenSelecionado}";
                     request.Headers["secullumbancoselecionado"] = BancoPontoWebSelecionado;
+                }
+
+                if (!string.IsNullOrEmpty(AccessTokenSelecionado))
+                {
+                    request.Headers["Authorization"] = $"Bearer {AccessTokenSelecionado}";
                 }
 
                 if (dados != null)
@@ -423,7 +445,7 @@ namespace PontoWebIntegracaoExterna
                         request.ContentLength = bytes.Length;
 
                         using (var requestStream = request.GetRequestStream())
-                        {    
+                        {
                             requestStream.Write(bytes, 0, bytes.Length);
                         }
                     }
@@ -465,7 +487,7 @@ namespace PontoWebIntegracaoExterna
         {
             var values = new List<string>();
             var props = obj.GetType().GetProperties();
-            
+
             foreach (var prop in props)
             {
                 var value = prop.GetValue(obj, null);

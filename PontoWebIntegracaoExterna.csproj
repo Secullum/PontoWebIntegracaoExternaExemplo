@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="IntegracaoPontoWeb.cs" />
     <Compile Include="Modelos\AutenticacaoDadosDaContaResposta.cs" />
+    <Compile Include="Modelos\Banco.cs" />
     <Compile Include="Modelos\AutenticacaoResposta.cs" />
     <Compile Include="Modelos\Empresa.cs" />
     <Compile Include="Program.cs" />

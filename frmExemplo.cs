@@ -51,19 +51,9 @@ namespace PontoWebIntegracaoExterna
             {
                 txtCS_NomeUsuario.Text = resp.nome;
 
-                var arrayBancos = resp.listaBancos.Split(';');
-                var arrayNomes = resp.listaNomesBancos.Split(';');
-
-                Dictionary<string, string> bancos = new Dictionary<string, string>();
-
-                for (int i = 0; i < arrayBancos.Length; i++)
-                {
-                    bancos.Add(arrayBancos[i], arrayNomes[i]);
-                }
-                
-                cboCS_Bancos.DataSource = new BindingSource(bancos, null);
-                cboCS_Bancos.DisplayMember = "Value";
-                cboCS_Bancos.ValueMember = "Key";
+                cboCS_Bancos.DataSource = new BindingSource(resp.listaBancos, null);
+                cboCS_Bancos.DisplayMember = "nome";
+                cboCS_Bancos.ValueMember = "identificador";
             }
         }
 

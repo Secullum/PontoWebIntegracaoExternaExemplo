@@ -1,10 +1,12 @@
-﻿namespace PontoWebIntegracaoExterna.Modelos
+﻿using System.Collections.Generic;
+
+namespace PontoWebIntegracaoExterna.Modelos
 {
     class AutenticacaoDadosDaContaResposta
     {
         public string email { get; set; }
         public string nome { get; set; }
-        public string listaBancos { get; set; }
+        public List<Banco> listaBancos { get; set; }
         public string listaNomesBancos { get; set; }
         public string listaDiasRestantesValidadeBancos { get; set; }
         public string listaServidores { get; set; }
