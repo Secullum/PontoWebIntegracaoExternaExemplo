@@ -3,6 +3,7 @@ Esta é uma aplicação de exemplo para integração de dados via *webservice* c
 
 
 **Importante:**
-* Para realizar a integração, será necessário uma **Conta Secullum** com pelo menos 1 banco de dados do **Ponto Secullum Web** ativo.
+* Para realizar a integração, será necessário uma **Conta Secullum** com pelo menos 1 banco de dados do **Ponto Secullum Web** ativo utilizando o plano PRO ou superior. 
+* Além disso é necessário habilitar a integração externa dentro do **Ponto Secullum Web**, via menu Manutenção > Integração com Sistemas.
 * Leia o [Manual da Integração](https://github.com/Secullum/PontoWebIntegracaoExternaExemplo/blob/master/Integracao_Externa_Ponto_Web.pdf) atentamente para entender o fluxo de dados.
 * Em caso de dúvidas, consulte seu suporte técnico.
