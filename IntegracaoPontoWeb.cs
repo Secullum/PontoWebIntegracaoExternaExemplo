@@ -12,7 +12,7 @@ namespace PontoWebIntegracaoExterna
     class IntegracaoPontoWeb
     {
         const string ENDERECO_AUTENTICADOR = "https://autenticador.secullum.com.br";
-        const string ENDERECO_PONTOWEB = "https://pontoweb.secullum.com.br/IntegracaoExterna/";
+        const string ENDERECO_PONTOWEB = "https://pontowebintegracaoexterna.secullum.com.br/IntegracaoExterna/";
         const int CLIENT_ID_PONTOWEB = 3;
 
         enum TipoWebServiceSecullum { Autenticador, PontoWeb };
