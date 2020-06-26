@@ -4,7 +4,7 @@ namespace PontoWebIntegracaoExterna
 {
     class RespostaRequisicao
     {
-        public HttpStatusCode CodigoHttp;
-        public string Conteudo;
+        public HttpStatusCode CodigoHttp { get; set; }
+        public string Conteudo { get; set; }
     }
 }
