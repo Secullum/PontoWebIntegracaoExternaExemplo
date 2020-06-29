@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PontoWebIntegracaoExterna.Modelos;
+using System;
 using System.Windows.Forms;
 
 namespace PontoWebIntegracaoExterna
@@ -13,9 +13,18 @@ namespace PontoWebIntegracaoExterna
             InitializeComponent();
         }
 
-        private void frmExemplo_Load(object sender, EventArgs e)
+        private bool ConsistirDados()
         {
+            if (string.IsNullOrEmpty(txtCS_Access_Token.Text))
+            {
+                MessageBox.Show("É necessário fazer login na Conta Secullum");
 
+                tabControl1.SelectedIndex = 0;
+
+                return false;
+            }
+
+            return true;
         }
 
         private void btnCS_Autenticar_Click(object sender, EventArgs e)
@@ -51,180 +60,345 @@ namespace PontoWebIntegracaoExterna
             {
                 txtCS_NomeUsuario.Text = resp.nome;
 
-                cboCS_Bancos.DataSource = new BindingSource(resp.listaBancos, null);
                 cboCS_Bancos.DisplayMember = "nome";
                 cboCS_Bancos.ValueMember = "identificador";
+                cboCS_Bancos.DataSource = new BindingSource(resp.listaBancos, null);
             }
         }
 
         private void btnEmpresas_Listar_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvEmpresas.DataSource = integracao.ListarEmpresas(string.Empty);
-        }
-
-        private void AtualizaPropriedades()
-        {
-            integracao.AccessTokenSelecionado = txtCS_Access_Token.Text;
-            integracao.BancoPontoWebSelecionado = cboCS_Bancos.SelectedValue.ToString();
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvEmpresas.DataSource = integracao.ListarEmpresas(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(integracao.ExcluirEmpresa(txtCnpjEmpresa.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirEmpresa(txtCnpjEmpresa.Text));
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvHorarios.DataSource = integracao.ListarHorarios(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvHorarios.DataSource = integracao.ListarHorarios(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(integracao.ExcluirHorario(txthorarioNumero.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirHorario(txthorarioNumero.Text));
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvFuncoes.DataSource = integracao.ListarFuncoes(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvFuncoes.DataSource = integracao.ListarFuncoes(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(integracao.ExcluirFuncao(txtFuncaoDescricao.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirFuncao(txtFuncaoDescricao.Text));
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvDepartamentos.DataSource = integracao.ListarDepartamentos(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvDepartamentos.DataSource = integracao.ListarDepartamentos(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(integracao.ExcluirDepartamento(txtDepartamentoDescricao.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirDepartamento(txtDepartamentoDescricao.Text));
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvFuncionarios.DataSource = integracao.ListarFuncionarios(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(integracao.ExcluirFuncionario(txtPis.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirFuncionario(txtPis.Text));
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvEmpresas.DataSource = integracao.ListarEmpresas(txtCnpjEmpresa.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvEmpresas.DataSource = integracao.ListarEmpresas(txtCnpjEmpresa.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvHorarios.DataSource = integracao.ListarHorarios(txthorarioNumero.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvHorarios.DataSource = integracao.ListarHorarios(txthorarioNumero.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvFuncoes.DataSource = integracao.ListarFuncoes(txtFuncaoDescricao.Text);
-
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvFuncoes.DataSource = integracao.ListarFuncoes(txtFuncaoDescricao.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvDepartamentos.DataSource = integracao.ListarDepartamentos(txtDepartamentoDescricao.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvDepartamentos.DataSource = integracao.ListarDepartamentos(txtDepartamentoDescricao.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvFuncionarios.DataSource = integracao.ListarFuncionarios(txtPis.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(txtPis.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvMotivosDemissao.DataSource = integracao.ListarMotivosDemissao(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvMotivosDemissao.DataSource = integracao.ListarMotivosDemissao(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvMotivosDemissao.DataSource = integracao.ListarMotivosDemissao(txtMotivoDemissaoDescricao.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvMotivosDemissao.DataSource = integracao.ListarMotivosDemissao(txtMotivoDemissaoDescricao.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvAfastamentos.DataSource = integracao.ListarAfastamentos();
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvAfastamentos.DataSource = integracao.ListarAfastamentos(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvJustificativas.DataSource = integracao.ListarJustificativas(string.Empty);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvJustificativas.DataSource = integracao.ListarJustificativas(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvJustificativas.DataSource = integracao.ListarJustificativas(txtJustificativaDescricao.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvJustificativas.DataSource = integracao.ListarJustificativas(txtJustificativaDescricao.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvPerguntasAdicionais.DataSource = integracao.ListarPerguntasAdicionais();
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvPerguntasAdicionais.DataSource = integracao.ListarPerguntasAdicionais();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvPerguntasAdicionais.DataSource = integracao.ListarPerguntasAdicionais(txtPerguntaDescricao.Text, txtPerguntaGrupo.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvPerguntasAdicionais.DataSource = integracao.ListarPerguntasAdicionais(txtPerguntaDescricao.Text, txtPerguntaGrupo.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button29_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            dgvBatidas.DataSource = integracao.ListarBatidas(txtBatidasDataInicio.Text, txtBatidasDataFim.Text, txtBatidasFuncionarioPis.Text);
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvBatidas.DataSource = integracao.ListarBatidas(txtBatidasDataInicio.Text, txtBatidasDataFim.Text, txtBatidasFuncionarioPis.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button27_Click(object sender, EventArgs e)
         {
-            var dados = new IntegracaoPontoWeb.AfastamentoIntegracaoExterna()
+            if (!ConsistirDados())
+            {
+                return;
+            }
+
+            var dados = new Afastamento()
             {
                 NumeroPis = txtAfastamentoFuncionarioPis.Text,
                 Inicio = Convert.ToDateTime(txtAfastamentoDataInicio.Text),
@@ -233,37 +407,79 @@ namespace PontoWebIntegracaoExterna
                 Motivo = txtAfastamentoMotivo.Text
             };
 
-            AtualizaPropriedades();
-
             MessageBox.Show(integracao.SalvarAfastamento(dados));
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            MessageBox.Show(integracao.ExcluirMotivoDemissao(txtMotivoDemissaoDescricao.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirMotivoDemissao(txtMotivoDemissaoDescricao.Text));
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            MessageBox.Show(integracao.ExcluirAfastamento(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirAfastamento(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text));
+            }
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
-
-            MessageBox.Show(integracao.ExcluirJustificativa(txtJustificativaDescricao.Text));
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirJustificativa(txtJustificativaDescricao.Text));
+            }
         }
 
         private void button25_Click(object sender, EventArgs e)
         {
-            AtualizaPropriedades();
+            if (ConsistirDados())
+            {
+                MessageBox.Show(integracao.ExcluirPerguntaAdicional(txtPerguntaDescricao.Text, txtPerguntaGrupo.Text));
+            }
+        }
 
-            MessageBox.Show(integracao.ExcluirPerguntaAdicional(txtPerguntaDescricao.Text, txtPerguntaGrupo.Text));
+        private void btnLISTAR_PENDENCIAS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvPENDENCIAS.DataSource = integracao.ListarPendencias();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSALVAR_PENDENCIA_Click(object sender, EventArgs e)
+        {
+            if (!ConsistirDados())
+            {
+                return;
+            }
+
+            var dados = new PendenciaProcessada()
+            {
+                NomeComputador = txtNOME_COMPUTADOR.Text,
+                Erro = txtERRO.Text
+            };
+
+            int.TryParse(txtPENDENCIA_ID.Text, out int pendenciaId);
+
+            dados.Id = pendenciaId;
+
+            MessageBox.Show(integracao.SalvarPendenciaProcessada(dados));
+        }
+
+        private void cboCS_Bancos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            integracao.BancoPontoWebSelecionado = cboCS_Bancos.SelectedValue.ToString();
         }
     }
 }

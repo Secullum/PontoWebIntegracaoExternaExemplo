@@ -57,10 +57,12 @@
       <DependentUpon>frmExemplo.cs</DependentUpon>
     </Compile>
     <Compile Include="IntegracaoPontoWeb.cs" />
+    <Compile Include="Modelos\Afastamento.cs" />
     <Compile Include="Modelos\AutenticacaoDadosDaContaResposta.cs" />
     <Compile Include="Modelos\Banco.cs" />
     <Compile Include="Modelos\AutenticacaoResposta.cs" />
     <Compile Include="Modelos\Empresa.cs" />
+    <Compile Include="Modelos\PendenciaProcessada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\RespostaRequisicao.cs" />

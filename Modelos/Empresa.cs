@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PontoWebIntegracaoExterna.Modelos
+﻿namespace PontoWebIntegracaoExterna.Modelos
 {
-    class Empresa
+    public class Empresa
     {
         public string Nome { get; set; }
-        public string CnpjCpf { get; set; }
+        public string Documento { get; set; }
         public string Inscricao { get; set; }
         public string Endereco { get; set; }
         public string Bairro { get; set; }

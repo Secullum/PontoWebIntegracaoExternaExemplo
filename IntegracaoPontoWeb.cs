@@ -34,7 +34,8 @@ namespace PontoWebIntegracaoExterna
 
             AutenticacaoResposta resposta = new AutenticacaoResposta();
 
-            if (respHttp.CodigoHttp == HttpStatusCode.OK) {
+            if (respHttp.CodigoHttp == HttpStatusCode.OK)
+            {
                 resposta = JsonConvert.DeserializeObject<AutenticacaoResposta>(respHttp.Conteudo);
             }
             else
@@ -78,9 +79,9 @@ namespace PontoWebIntegracaoExterna
                 // ClienteId 3 = valor fixo
                 resposta.listaBancos = listaBancos.Where(x => x.clienteId == "3").Select(x => new Banco
                 {
-                    id =x.id,
+                    id = x.id,
                     nome = x.nome,
-                    clienteId= x.clienteId,
+                    clienteId = x.clienteId,
                     identificador = Guid.Parse(x.identificador).ToString("N")
                 }).ToList();
             }
@@ -97,7 +98,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<Empresa>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         public string IncluirAlterarEmpresa(Empresa dados)
@@ -128,7 +129,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal string ExcluirFuncao(string text)
@@ -170,7 +171,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal string ExcluirDepartamento(string text)
@@ -197,7 +198,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal object ListarAfastamentos()
@@ -209,7 +210,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal object ListarAfastamentos(string inicio, string fim, string pis)
@@ -221,7 +222,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal object ListarJustificativas(string descricao)
@@ -233,7 +234,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal object ListarPerguntasAdicionais(string descricao, string grupo)
@@ -245,7 +246,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal object ListarBatidas(string inicio, string fim, string pis)
@@ -257,12 +258,19 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
-        internal string SalvarAfastamento(AfastamentoIntegracaoExterna dados)
+        internal string SalvarAfastamento(Afastamento dados)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "FuncionariosAfastamentos", "POST", dados);
+
+            return respHttp.Conteudo;
+        }
+
+        internal string SalvarPendenciaProcessada(PendenciaProcessada dados)
+        {
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Pendencias", "POST", dados);
 
             return respHttp.Conteudo;
         }
@@ -336,7 +344,19 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
+        }
+
+        internal object ListarPendencias()
+        {
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Pendencias", "GET", null);
+
+            if (respHttp.CodigoHttp == HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
+            }
+
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal List<dynamic> ListarHorarios(string numero)
@@ -348,7 +368,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         internal List<dynamic> ListarFuncionarios(string pis)
@@ -360,7 +380,7 @@ namespace PontoWebIntegracaoExterna
                 return JsonConvert.DeserializeObject<List<dynamic>>(respHttp.Conteudo);
             }
 
-            return null;
+            throw new Exception(respHttp.Conteudo);
         }
 
         public string ExcluirEmpresa(string cnpj)
@@ -397,18 +417,18 @@ namespace PontoWebIntegracaoExterna
         {
             try
             {
-                var url_inteira = (webservice == TipoWebServiceSecullum.Autenticador ? ENDERECO_AUTENTICADOR : ENDERECO_PONTOWEB) +  endereco;
+                var url = (webservice == TipoWebServiceSecullum.Autenticador ? ENDERECO_AUTENTICADOR : ENDERECO_PONTOWEB) + endereco;
 
                 RespostaRequisicao resposta = new RespostaRequisicao();
 
-                var request = (HttpWebRequest)WebRequest.Create(url_inteira);
+                var request = (HttpWebRequest)WebRequest.Create(url);
 
                 request.Method = metodo;
                 request.KeepAlive = false;
                 request.ServicePoint.Expect100Continue = false;
                 request.ContentLength = 0;
 
-                if (webservice== TipoWebServiceSecullum.Autenticador )
+                if (webservice == TipoWebServiceSecullum.Autenticador)
                 {
                     request.ContentType = "application/x-www-form-urlencoded";
                 }
@@ -468,11 +488,18 @@ namespace PontoWebIntegracaoExterna
                         throw ex;
                     }
 
-                    using (var response = (HttpWebResponse)ex.Response)
+                    var response = (HttpWebResponse)ex.Response;
+
+                    if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        throw new Exception("Banco não autorizado", ex);
+                    }
+
                     using (var streamReader = new StreamReader(response.GetResponseStream()))
                     {
                         resposta.CodigoHttp = response.StatusCode;
                         resposta.Conteudo = streamReader.ReadToEnd();
+
                         return resposta;
                     }
                 }
@@ -497,15 +524,6 @@ namespace PontoWebIntegracaoExterna
             }
 
             return string.Join("&", values);
-        }
-
-        public class AfastamentoIntegracaoExterna
-        {
-            public string NumeroPis { get; set; }
-            public DateTime Inicio { get; set; }
-            public DateTime Fim { get; set; }
-            public string Motivo { get; set; }
-            public string JustificativaNome { get; set; }
         }
     }
 }
