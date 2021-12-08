@@ -1,4 +1,5 @@
-﻿using PontoWebIntegracaoExterna.Modelos;
+﻿using PontoWebIntegracaoExterna.Filtros;
+using PontoWebIntegracaoExterna.Modelos;
 using System;
 using System.Windows.Forms;
 
@@ -382,7 +383,15 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvBatidas.DataSource = integracao.ListarBatidas(txtBatidasDataInicio.Text, txtBatidasDataFim.Text, txtBatidasFuncionarioPis.Text);
+                    dgvBatidas.DataSource = integracao.ListarBatidas(new BatidaFiltro()
+                    {
+                        DataInicio = txtBatidasDataInicio.Text,
+                        DataFim = txtBatidasDataFim.Text,
+                        HoraInicio = txtBatidasHoraInicio.Text,
+                        HoraFim = txtBatidasHoraFim.Text,
+                        FuncionarioPis = txtBatidasFuncionarioPis.Text,
+                        EmpresaDocumento = txtBatidasEmpresaDocumento.Text
+                    });
                 }
             }
             catch (Exception ex)
