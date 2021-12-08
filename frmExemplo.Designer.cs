@@ -141,6 +141,16 @@
             this.txtNOME_COMPUTADOR = new System.Windows.Forms.TextBox();
             this.btnLISTAR_PENDENCIAS = new System.Windows.Forms.Button();
             this.dgvPENDENCIAS = new System.Windows.Forms.DataGridView();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtBatidasHoraFim = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtBatidasHoraInicio = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtBatidasEmpresaDocumento = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbgContaSecullum.SuspendLayout();
             this.tbgEmpresas.SuspendLayout();
@@ -1094,6 +1104,16 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.label36);
+            this.tabPage9.Controls.Add(this.label35);
+            this.tabPage9.Controls.Add(this.label34);
+            this.tabPage9.Controls.Add(this.txtBatidasEmpresaDocumento);
+            this.tabPage9.Controls.Add(this.label28);
+            this.tabPage9.Controls.Add(this.label29);
+            this.tabPage9.Controls.Add(this.label32);
+            this.tabPage9.Controls.Add(this.txtBatidasHoraFim);
+            this.tabPage9.Controls.Add(this.label33);
+            this.tabPage9.Controls.Add(this.txtBatidasHoraInicio);
             this.tabPage9.Controls.Add(this.label25);
             this.tabPage9.Controls.Add(this.label24);
             this.tabPage9.Controls.Add(this.label19);
@@ -1115,25 +1135,25 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(313, 333);
+            this.label25.Location = new System.Drawing.Point(337, 301);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 13);
+            this.label25.Size = new System.Drawing.Size(123, 13);
             this.label25.TabIndex = 57;
-            this.label25.Text = "yyyy-mm-dd";
+            this.label25.Text = "Obrigatório (yyyy-MM-dd)";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(313, 307);
+            this.label24.Location = new System.Drawing.Point(337, 275);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(61, 13);
+            this.label24.Size = new System.Drawing.Size(123, 13);
             this.label24.TabIndex = 56;
-            this.label24.Text = "yyyy-mm-dd";
+            this.label24.Text = "Obrigatório (yyyy-MM-dd)";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 363);
+            this.label19.Location = new System.Drawing.Point(15, 379);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 13);
             this.label19.TabIndex = 55;
@@ -1141,15 +1161,15 @@
             // 
             // txtBatidasFuncionarioPis
             // 
-            this.txtBatidasFuncionarioPis.Location = new System.Drawing.Point(105, 356);
+            this.txtBatidasFuncionarioPis.Location = new System.Drawing.Point(129, 372);
             this.txtBatidasFuncionarioPis.Name = "txtBatidasFuncionarioPis";
             this.txtBatidasFuncionarioPis.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasFuncionarioPis.TabIndex = 54;
+            this.txtBatidasFuncionarioPis.TabIndex = 5;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 337);
+            this.label20.Location = new System.Drawing.Point(15, 301);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 13);
             this.label20.TabIndex = 53;
@@ -1157,33 +1177,33 @@
             // 
             // txtBatidasDataFim
             // 
-            this.txtBatidasDataFim.Location = new System.Drawing.Point(105, 330);
+            this.txtBatidasDataFim.Location = new System.Drawing.Point(129, 294);
             this.txtBatidasDataFim.Name = "txtBatidasDataFim";
             this.txtBatidasDataFim.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasDataFim.TabIndex = 52;
+            this.txtBatidasDataFim.TabIndex = 2;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 311);
+            this.label21.Location = new System.Drawing.Point(15, 275);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 13);
+            this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 50;
-            this.label21.Text = "Data Inicio";
+            this.label21.Text = "Data Início";
             // 
             // txtBatidasDataInicio
             // 
-            this.txtBatidasDataInicio.Location = new System.Drawing.Point(105, 304);
+            this.txtBatidasDataInicio.Location = new System.Drawing.Point(129, 268);
             this.txtBatidasDataInicio.Name = "txtBatidasDataInicio";
             this.txtBatidasDataInicio.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasDataInicio.TabIndex = 49;
+            this.txtBatidasDataInicio.TabIndex = 1;
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(316, 353);
+            this.button29.Location = new System.Drawing.Point(18, 17);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(187, 23);
-            this.button29.TabIndex = 47;
+            this.button29.TabIndex = 0;
             this.button29.Text = "Listar";
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.button29_Click);
@@ -1290,6 +1310,90 @@
             this.dgvPENDENCIAS.Name = "dgvPENDENCIAS";
             this.dgvPENDENCIAS.Size = new System.Drawing.Size(965, 193);
             this.dgvPENDENCIAS.TabIndex = 59;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(337, 353);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(146, 13);
+            this.label28.TabIndex = 63;
+            this.label28.Text = "Opcional (HH:mm ou HH-mm)";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(337, 327);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(146, 13);
+            this.label29.TabIndex = 62;
+            this.label29.Text = "Opcional (HH:mm ou HH-mm)";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(15, 353);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(49, 13);
+            this.label32.TabIndex = 61;
+            this.label32.Text = "Hora Fim";
+            // 
+            // txtBatidasHoraFim
+            // 
+            this.txtBatidasHoraFim.Location = new System.Drawing.Point(129, 346);
+            this.txtBatidasHoraFim.Name = "txtBatidasHoraFim";
+            this.txtBatidasHoraFim.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasHoraFim.TabIndex = 4;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 327);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(60, 13);
+            this.label33.TabIndex = 59;
+            this.label33.Text = "Hora Início";
+            // 
+            // txtBatidasHoraInicio
+            // 
+            this.txtBatidasHoraInicio.Location = new System.Drawing.Point(129, 320);
+            this.txtBatidasHoraInicio.Name = "txtBatidasHoraInicio";
+            this.txtBatidasHoraInicio.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasHoraInicio.TabIndex = 3;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(15, 405);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(106, 13);
+            this.label34.TabIndex = 65;
+            this.label34.Text = "Empresa Documento";
+            // 
+            // txtBatidasEmpresaDocumento
+            // 
+            this.txtBatidasEmpresaDocumento.Location = new System.Drawing.Point(129, 398);
+            this.txtBatidasEmpresaDocumento.Name = "txtBatidasEmpresaDocumento";
+            this.txtBatidasEmpresaDocumento.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasEmpresaDocumento.TabIndex = 6;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(337, 379);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 13);
+            this.label35.TabIndex = 66;
+            this.label35.Text = "Opcional";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(337, 405);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(49, 13);
+            this.label36.TabIndex = 67;
+            this.label36.Text = "Opcional";
             // 
             // frmExemplo
             // 
@@ -1457,6 +1561,16 @@
         private System.Windows.Forms.DataGridView dgvPENDENCIAS;
         private System.Windows.Forms.Label label123;
         private System.Windows.Forms.TextBox txtPENDENCIA_ID;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtBatidasEmpresaDocumento;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtBatidasHoraFim;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtBatidasHoraInicio;
     }
 }
 

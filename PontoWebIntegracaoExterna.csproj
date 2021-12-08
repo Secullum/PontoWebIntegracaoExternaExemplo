@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filtros\BatidaFiltro.cs" />
     <Compile Include="frmExemplo.cs">
       <SubType>Form</SubType>
     </Compile>
