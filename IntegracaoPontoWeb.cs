@@ -137,30 +137,14 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Funcoes?descricao=" + text, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
         }
 
         internal string ExcluirHorario(string text)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Horarios?numero=" + text, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
         }
 
         internal List<dynamic> ListarDepartamentos(string descricao)
@@ -179,15 +163,7 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Departamentos?descricao=" + text, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);            
         }
 
         internal List<dynamic> ListarMotivosDemissao(string descricao)
@@ -310,60 +286,28 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "MotivosDemissao?descricao=" + text, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
         }
 
         internal string ExcluirJustificativa(string text)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Justificativas?descricao=" + text, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
         }
 
         internal string ExcluirPerguntaAdicional(string descricao, string grupo)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"PerguntasAdicionais?descricao={descricao}&grupo={grupo}", "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(descricao);
         }
 
         internal string ExcluirAfastamento(string inicio, string fim, string pis)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FuncionariosAfastamentos?dataInicio={inicio}&dataFim={fim}&funcionarioPis={pis}", "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao("Afastamento");
         }
 
         internal object ListarPerguntasAdicionais()
@@ -418,30 +362,14 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Empresas?cnpjCpf=" + cnpj, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(cnpj);
         }
 
         internal string ExcluirFuncionario(string pis)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Funcionarios?pis=" + pis, "DELETE");
 
-            var resposta = new AutenticacaoDadosDaContaResposta();
-
-            if (respHttp.CodigoHttp != HttpStatusCode.OK)
-            {
-                resposta.erro = true;
-                resposta.mensagem = respHttp.Conteudo;
-            }
-
-            return resposta.mensagem;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(pis);
         }
 
         private RespostaRequisicao FazRequisicaoHttp(TipoWebServiceSecullum webservice, string endereco, string metodo, object dados = null)
@@ -555,6 +483,11 @@ namespace PontoWebIntegracaoExterna
             }
 
             return string.Join("&", values);
+        }
+
+        private string CriarMensagemExclusao(string text) 
+        {
+            return $"{text} excluído com êxito";
         }
     }
 }

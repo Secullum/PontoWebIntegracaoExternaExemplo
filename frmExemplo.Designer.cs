@@ -121,6 +121,16 @@
             this.button26 = new System.Windows.Forms.Button();
             this.dgvPerguntasAdicionais = new System.Windows.Forms.DataGridView();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtBatidasEmpresaDocumento = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtBatidasHoraFim = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtBatidasHoraInicio = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -141,16 +151,6 @@
             this.txtNOME_COMPUTADOR = new System.Windows.Forms.TextBox();
             this.btnLISTAR_PENDENCIAS = new System.Windows.Forms.Button();
             this.dgvPENDENCIAS = new System.Windows.Forms.DataGridView();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtBatidasHoraFim = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtBatidasHoraInicio = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtBatidasEmpresaDocumento = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbgContaSecullum.SuspendLayout();
             this.tbgEmpresas.SuspendLayout();
@@ -662,9 +662,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(15, 312);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.Size = new System.Drawing.Size(64, 13);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Descricao";
+            this.label11.Text = "Número PIS";
             // 
             // txtPis
             // 
@@ -1132,6 +1132,90 @@
             this.tabPage9.Text = "Batidas";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(337, 405);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(49, 13);
+            this.label36.TabIndex = 67;
+            this.label36.Text = "Opcional";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(337, 379);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 13);
+            this.label35.TabIndex = 66;
+            this.label35.Text = "Opcional";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(15, 405);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(106, 13);
+            this.label34.TabIndex = 65;
+            this.label34.Text = "Empresa Documento";
+            // 
+            // txtBatidasEmpresaDocumento
+            // 
+            this.txtBatidasEmpresaDocumento.Location = new System.Drawing.Point(129, 398);
+            this.txtBatidasEmpresaDocumento.Name = "txtBatidasEmpresaDocumento";
+            this.txtBatidasEmpresaDocumento.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasEmpresaDocumento.TabIndex = 6;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(337, 353);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(146, 13);
+            this.label28.TabIndex = 63;
+            this.label28.Text = "Opcional (HH:mm ou HH-mm)";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(337, 327);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(146, 13);
+            this.label29.TabIndex = 62;
+            this.label29.Text = "Opcional (HH:mm ou HH-mm)";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(15, 353);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(49, 13);
+            this.label32.TabIndex = 61;
+            this.label32.Text = "Hora Fim";
+            // 
+            // txtBatidasHoraFim
+            // 
+            this.txtBatidasHoraFim.Location = new System.Drawing.Point(129, 346);
+            this.txtBatidasHoraFim.Name = "txtBatidasHoraFim";
+            this.txtBatidasHoraFim.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasHoraFim.TabIndex = 4;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 327);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(60, 13);
+            this.label33.TabIndex = 59;
+            this.label33.Text = "Hora Início";
+            // 
+            // txtBatidasHoraInicio
+            // 
+            this.txtBatidasHoraInicio.Location = new System.Drawing.Point(129, 320);
+            this.txtBatidasHoraInicio.Name = "txtBatidasHoraInicio";
+            this.txtBatidasHoraInicio.Size = new System.Drawing.Size(187, 20);
+            this.txtBatidasHoraInicio.TabIndex = 3;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1310,90 +1394,6 @@
             this.dgvPENDENCIAS.Name = "dgvPENDENCIAS";
             this.dgvPENDENCIAS.Size = new System.Drawing.Size(965, 193);
             this.dgvPENDENCIAS.TabIndex = 59;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(337, 353);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(146, 13);
-            this.label28.TabIndex = 63;
-            this.label28.Text = "Opcional (HH:mm ou HH-mm)";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(337, 327);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(146, 13);
-            this.label29.TabIndex = 62;
-            this.label29.Text = "Opcional (HH:mm ou HH-mm)";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(15, 353);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(49, 13);
-            this.label32.TabIndex = 61;
-            this.label32.Text = "Hora Fim";
-            // 
-            // txtBatidasHoraFim
-            // 
-            this.txtBatidasHoraFim.Location = new System.Drawing.Point(129, 346);
-            this.txtBatidasHoraFim.Name = "txtBatidasHoraFim";
-            this.txtBatidasHoraFim.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasHoraFim.TabIndex = 4;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 327);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(60, 13);
-            this.label33.TabIndex = 59;
-            this.label33.Text = "Hora Início";
-            // 
-            // txtBatidasHoraInicio
-            // 
-            this.txtBatidasHoraInicio.Location = new System.Drawing.Point(129, 320);
-            this.txtBatidasHoraInicio.Name = "txtBatidasHoraInicio";
-            this.txtBatidasHoraInicio.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasHoraInicio.TabIndex = 3;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(15, 405);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(106, 13);
-            this.label34.TabIndex = 65;
-            this.label34.Text = "Empresa Documento";
-            // 
-            // txtBatidasEmpresaDocumento
-            // 
-            this.txtBatidasEmpresaDocumento.Location = new System.Drawing.Point(129, 398);
-            this.txtBatidasEmpresaDocumento.Name = "txtBatidasEmpresaDocumento";
-            this.txtBatidasEmpresaDocumento.Size = new System.Drawing.Size(187, 20);
-            this.txtBatidasEmpresaDocumento.TabIndex = 6;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(337, 379);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(49, 13);
-            this.label35.TabIndex = 66;
-            this.label35.Text = "Opcional";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(337, 405);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(49, 13);
-            this.label36.TabIndex = 67;
-            this.label36.Text = "Opcional";
             // 
             // frmExemplo
             // 
