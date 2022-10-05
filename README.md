@@ -3,6 +3,7 @@ Esta é uma aplicação de exemplo para integração de dados via *webservice* c
 
 # Interface baseada em OpenApi
 Neste [link](https://pontowebintegracaoexterna.secullum.com.br/docs/) está disponível uma interface para testes das requisições.
+
 Obs: Para obter o token de acesso seguir a descrição do manual de integração no link abaixo.
 
 **Importante:**
