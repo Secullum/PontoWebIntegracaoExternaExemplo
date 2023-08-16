@@ -386,9 +386,9 @@ namespace PontoWebIntegracaoExterna
 
         public List<FonteDados> ListarFonteDados(FonteDadosFiltro filtro)
         {
-            var query = new StringBuilder();            
+            var query = new StringBuilder();
 
-            query.Append($"dataInicio={filtro.DataInicio}");                      
+            query.Append($"dataInicio={filtro.DataInicio}");
             query.Append("&");
             query.Append($"dataFim={filtro.DataFim}");
 
