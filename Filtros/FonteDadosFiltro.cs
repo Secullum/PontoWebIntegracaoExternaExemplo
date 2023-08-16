@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace PontoWebIntegracaoExterna.Filtros
+﻿namespace PontoWebIntegracaoExterna.Filtros
 {
     public class FonteDadosFiltro
-    {      
-        public string DataInicio { get; set; }     
+    {
+        public string DataInicio { get; set; }
         public string DataFim { get; set; }
         public string HoraInicio
         {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace PontoWebIntegracaoExterna.Modelos
+﻿namespace PontoWebIntegracaoExterna.Modelos
 {
     public class Equipamento
     {
