@@ -28,6 +28,7 @@
             }
         }
         public string FuncionarioPis { get; set; }
+        public string FuncionarioCpf { get; set; }
         public string EquipamentoId { get; set; }
         public string Origem { get; set; }
 

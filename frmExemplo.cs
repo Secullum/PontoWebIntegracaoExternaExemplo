@@ -518,6 +518,7 @@ namespace PontoWebIntegracaoExterna
                         HoraInicio = txtFonteDadosHoraInicio.Text,
                         HoraFim = txtFonteDadosHoraFim.Text,
                         FuncionarioPis = txtFonteDadosFuncionarioPis.Text,
+                        FuncionarioCpf = txtFonteDadosFuncionarioCpf.Text,
                         EquipamentoId = txtFonteDadosEquipamentoId.Text,
                         Origem = txtFonteDadosOrigem.Text
                     });

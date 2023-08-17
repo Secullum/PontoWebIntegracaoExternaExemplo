@@ -175,6 +175,8 @@
             this.txtFonteDadosDataInicio = new System.Windows.Forms.TextBox();
             this.btnFonteDadosListar = new System.Windows.Forms.Button();
             this.dgvFonteDados = new System.Windows.Forms.DataGridView();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtFonteDadosFuncionarioCpf = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tbgContaSecullum.SuspendLayout();
             this.tbgEmpresas.SuspendLayout();
@@ -270,7 +272,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1072, 479);
+            this.tabControl1.Size = new System.Drawing.Size(1072, 500);
             this.tabControl1.TabIndex = 5;
             // 
             // tbgContaSecullum
@@ -1457,6 +1459,8 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.label45);
+            this.tabPage12.Controls.Add(this.txtFonteDadosFuncionarioCpf);
             this.tabPage12.Controls.Add(this.label41);
             this.tabPage12.Controls.Add(this.txtFonteDadosOrigem);
             this.tabPage12.Controls.Add(this.label44);
@@ -1480,7 +1484,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage12.Size = new System.Drawing.Size(1064, 474);
             this.tabPage12.TabIndex = 13;
             this.tabPage12.Text = "Fonte de Dados";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -1488,7 +1492,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(19, 420);
+            this.label41.Location = new System.Drawing.Point(19, 446);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(40, 13);
             this.label41.TabIndex = 84;
@@ -1496,7 +1500,7 @@
             // 
             // txtFonteDadosOrigem
             // 
-            this.txtFonteDadosOrigem.Location = new System.Drawing.Point(132, 413);
+            this.txtFonteDadosOrigem.Location = new System.Drawing.Point(132, 439);
             this.txtFonteDadosOrigem.Name = "txtFonteDadosOrigem";
             this.txtFonteDadosOrigem.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosOrigem.TabIndex = 83;
@@ -1504,7 +1508,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(19, 394);
+            this.label44.Location = new System.Drawing.Point(19, 420);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(83, 13);
             this.label44.TabIndex = 82;
@@ -1521,7 +1525,7 @@
             // 
             // txtFonteDadosEquipamentoId
             // 
-            this.txtFonteDadosEquipamentoId.Location = new System.Drawing.Point(132, 387);
+            this.txtFonteDadosEquipamentoId.Location = new System.Drawing.Point(132, 413);
             this.txtFonteDadosEquipamentoId.Name = "txtFonteDadosEquipamentoId";
             this.txtFonteDadosEquipamentoId.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosEquipamentoId.TabIndex = 79;
@@ -1651,17 +1655,33 @@
             this.dgvFonteDados.Size = new System.Drawing.Size(965, 193);
             this.dgvFonteDados.TabIndex = 32;
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(19, 394);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 13);
+            this.label45.TabIndex = 86;
+            this.label45.Text = "Número CPF";
+            // 
+            // txtFonteDadosFuncionarioCpf
+            // 
+            this.txtFonteDadosFuncionarioCpf.Location = new System.Drawing.Point(132, 387);
+            this.txtFonteDadosFuncionarioCpf.Name = "txtFonteDadosFuncionarioCpf";
+            this.txtFonteDadosFuncionarioCpf.Size = new System.Drawing.Size(187, 20);
+            this.txtFonteDadosFuncionarioCpf.TabIndex = 85;
+            // 
             // frmExemplo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 503);
+            this.ClientSize = new System.Drawing.Size(1096, 524);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmExemplo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ponto Secullum Web - Exemplo de Integração Externa";
+            this.Text = "Ponto Secullum Web - Exemplo de Integração Externa";            
             this.tabControl1.ResumeLayout(false);
             this.tbgContaSecullum.ResumeLayout(false);
             this.tbgContaSecullum.PerformLayout();
@@ -1856,6 +1876,8 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox txtFonteDadosOrigem;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtFonteDadosFuncionarioCpf;
     }
 }
 

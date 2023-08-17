@@ -410,6 +410,12 @@ namespace PontoWebIntegracaoExterna
                 query.Append($"funcionarioPis={filtro.FuncionarioPis}");
             }
 
+            if (!string.IsNullOrEmpty(filtro.FuncionarioCpf))
+            {
+                query.Append("&");
+                query.Append($"funcionarioCpf={filtro.FuncionarioCpf}");
+            }
+
             if (!string.IsNullOrEmpty(filtro.EquipamentoId))
             {
                 query.Append("&");
