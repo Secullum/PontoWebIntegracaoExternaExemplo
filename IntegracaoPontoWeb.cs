@@ -372,6 +372,72 @@ namespace PontoWebIntegracaoExterna
             return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(pis);
         }
 
+        public List<Equipamento> ListarEquipamentos()
+        {
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Equipamentos", "GET");
+
+            if (respHttp.CodigoHttp == HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<Equipamento>>(respHttp.Conteudo);
+            }
+
+            throw new Exception(respHttp.Conteudo);
+        }
+
+        public List<FonteDados> ListarFonteDados(FonteDadosFiltro filtro)
+        {
+            var query = new StringBuilder();
+
+            query.Append($"dataInicio={filtro.DataInicio}");
+            query.Append("&");
+            query.Append($"dataFim={filtro.DataFim}");
+
+            if (!string.IsNullOrEmpty(filtro.HoraInicio))
+            {
+                query.Append("&");
+                query.Append($"horaInicio={filtro.HoraInicio}");
+            }
+
+            if (!string.IsNullOrEmpty(filtro.HoraFim))
+            {
+                query.Append("&");
+                query.Append($"horaFim={filtro.HoraFim}");
+            }
+
+            if (!string.IsNullOrEmpty(filtro.FuncionarioPis))
+            {
+                query.Append("&");
+                query.Append($"funcionarioPis={filtro.FuncionarioPis}");
+            }
+
+            if (!string.IsNullOrEmpty(filtro.FuncionarioCpf))
+            {
+                query.Append("&");
+                query.Append($"funcionarioCpf={filtro.FuncionarioCpf}");
+            }
+
+            if (!string.IsNullOrEmpty(filtro.EquipamentoId))
+            {
+                query.Append("&");
+                query.Append($"equipamentoId={filtro.EquipamentoId}");
+            }
+
+            if (!string.IsNullOrEmpty(filtro.Origem))
+            {
+                query.Append("&");
+                query.Append($"origem={filtro.Origem}");
+            }
+
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDados?{query}", "GET");
+
+            if (respHttp.CodigoHttp == HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<FonteDados>>(respHttp.Conteudo);
+            }
+
+            throw new Exception(respHttp.Conteudo);
+        }
+
         private RespostaRequisicao FazRequisicaoHttp(TipoWebServiceSecullum webservice, string endereco, string metodo, object dados = null)
         {
             try

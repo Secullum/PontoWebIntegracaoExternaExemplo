@@ -490,5 +490,44 @@ namespace PontoWebIntegracaoExterna
         {
             integracao.BancoPontoWebSelecionado = cboCS_Bancos.SelectedValue.ToString();
         }
+
+        private void btnListarEquipamentos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvEquipamentos.DataSource = integracao.ListarEquipamentos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnFonteDadosListar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConsistirDados())
+                {
+                    dgvFonteDados.DataSource = integracao.ListarFonteDados(new FonteDadosFiltro()
+                    {
+                        DataInicio = txtFonteDadosDataInicio.Text,
+                        DataFim = txtFonteDadosDataFim.Text,
+                        HoraInicio = txtFonteDadosHoraInicio.Text,
+                        HoraFim = txtFonteDadosHoraFim.Text,
+                        FuncionarioPis = txtFonteDadosFuncionarioPis.Text,
+                        FuncionarioCpf = txtFonteDadosFuncionarioCpf.Text,
+                        EquipamentoId = txtFonteDadosEquipamentoId.Text,
+                        Origem = txtFonteDadosOrigem.Text
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

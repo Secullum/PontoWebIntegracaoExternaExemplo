@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filtros\BatidaFiltro.cs" />
+    <Compile Include="Filtros\FonteDadosFiltro.cs" />
     <Compile Include="frmExemplo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,8 @@
     <Compile Include="Modelos\Banco.cs" />
     <Compile Include="Modelos\AutenticacaoResposta.cs" />
     <Compile Include="Modelos\Empresa.cs" />
+    <Compile Include="Modelos\Equipamento.cs" />
+    <Compile Include="Modelos\FonteDados.cs" />
     <Compile Include="Modelos\PendenciaProcessada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
