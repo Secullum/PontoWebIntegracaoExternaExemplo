@@ -509,7 +509,7 @@ namespace PontoWebIntegracaoExterna
         {
             try
             {
-                if (ConsistirDados())
+                if (!chk_FonteDeDadosPorId.Checked && ConsistirDados())
                 {
                     dgvFonteDados.DataSource = integracao.ListarFonteDados(new FonteDadosFiltro()
                     {
@@ -523,10 +523,51 @@ namespace PontoWebIntegracaoExterna
                         Origem = txtFonteDadosOrigem.Text
                     });
                 }
+                else
+                {
+                    dgvFonteDados.DataSource = integracao.ListarFonteDadosPorId(txtFonteDadosId.Text);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void chk_FonteDeDadosPorId_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_FonteDeDadosPorId.Checked)
+            {
+                txtFonteDadosId.Enabled = true;
+                txtFonteDadosDataInicio.Text = string.Empty;
+                txtFonteDadosDataInicio.Enabled = false;
+                txtFonteDadosDataFim.Text = string.Empty;
+                txtFonteDadosDataFim.Enabled = false;
+                txtFonteDadosHoraInicio.Text = string.Empty;
+                txtFonteDadosHoraInicio.Enabled = false;
+                txtFonteDadosHoraFim.Text = string.Empty;
+                txtFonteDadosHoraFim.Enabled = false;
+                txtFonteDadosFuncionarioPis.Text = string.Empty;
+                txtFonteDadosFuncionarioPis.Enabled = false;
+                txtFonteDadosFuncionarioCpf.Text = string.Empty;
+                txtFonteDadosFuncionarioCpf.Enabled = false;
+                txtFonteDadosEquipamentoId.Text = string.Empty;
+                txtFonteDadosEquipamentoId.Enabled = false;
+                txtFonteDadosOrigem.Text = string.Empty;
+                txtFonteDadosOrigem.Enabled = false;
+            }
+            else
+            {
+                txtFonteDadosId.Text = string.Empty;
+                txtFonteDadosId.Enabled = false;
+                txtFonteDadosDataInicio.Enabled = true;                
+                txtFonteDadosDataFim.Enabled = true;
+                txtFonteDadosHoraInicio.Enabled = true;
+                txtFonteDadosHoraFim.Enabled = true;                
+                txtFonteDadosFuncionarioPis.Enabled = true;   
+                txtFonteDadosFuncionarioCpf.Enabled = true;                
+                txtFonteDadosEquipamentoId.Enabled = true;                
+                txtFonteDadosOrigem.Enabled = true;
             }
         }
     }

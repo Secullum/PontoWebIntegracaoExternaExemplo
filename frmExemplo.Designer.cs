@@ -155,6 +155,11 @@
             this.dgvEquipamentos = new System.Windows.Forms.DataGridView();
             this.btnListarEquipamentos = new System.Windows.Forms.Button();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.chk_FonteDeDadosPorId = new System.Windows.Forms.CheckBox();
+            this.txtFonteDadosId = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtFonteDadosFuncionarioCpf = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtFonteDadosOrigem = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -175,8 +180,6 @@
             this.txtFonteDadosDataInicio = new System.Windows.Forms.TextBox();
             this.btnFonteDadosListar = new System.Windows.Forms.Button();
             this.dgvFonteDados = new System.Windows.Forms.DataGridView();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtFonteDadosFuncionarioCpf = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tbgContaSecullum.SuspendLayout();
             this.tbgEmpresas.SuspendLayout();
@@ -272,7 +275,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1072, 500);
+            this.tabControl1.Size = new System.Drawing.Size(1069, 580);
             this.tabControl1.TabIndex = 5;
             // 
             // tbgContaSecullum
@@ -294,7 +297,7 @@
             this.tbgContaSecullum.Location = new System.Drawing.Point(4, 22);
             this.tbgContaSecullum.Name = "tbgContaSecullum";
             this.tbgContaSecullum.Padding = new System.Windows.Forms.Padding(3);
-            this.tbgContaSecullum.Size = new System.Drawing.Size(1064, 453);
+            this.tbgContaSecullum.Size = new System.Drawing.Size(1167, 554);
             this.tbgContaSecullum.TabIndex = 0;
             this.tbgContaSecullum.Text = "Conta Secullum";
             this.tbgContaSecullum.UseVisualStyleBackColor = true;
@@ -324,7 +327,7 @@
             this.cboCS_Bancos.FormattingEnabled = true;
             this.cboCS_Bancos.Location = new System.Drawing.Point(27, 396);
             this.cboCS_Bancos.Name = "cboCS_Bancos";
-            this.cboCS_Bancos.Size = new System.Drawing.Size(1004, 21);
+            this.cboCS_Bancos.Size = new System.Drawing.Size(1107, 21);
             this.cboCS_Bancos.TabIndex = 7;
             this.cboCS_Bancos.SelectedIndexChanged += new System.EventHandler(this.cboCS_Bancos_SelectedIndexChanged);
             // 
@@ -354,7 +357,7 @@
             this.txtCS_Access_Token.Location = new System.Drawing.Point(25, 177);
             this.txtCS_Access_Token.Name = "txtCS_Access_Token";
             this.txtCS_Access_Token.ReadOnly = true;
-            this.txtCS_Access_Token.Size = new System.Drawing.Size(1006, 20);
+            this.txtCS_Access_Token.Size = new System.Drawing.Size(1109, 20);
             this.txtCS_Access_Token.TabIndex = 3;
             // 
             // label3
@@ -394,7 +397,7 @@
             this.tbgEmpresas.Location = new System.Drawing.Point(4, 22);
             this.tbgEmpresas.Name = "tbgEmpresas";
             this.tbgEmpresas.Padding = new System.Windows.Forms.Padding(3);
-            this.tbgEmpresas.Size = new System.Drawing.Size(1064, 453);
+            this.tbgEmpresas.Size = new System.Drawing.Size(1167, 554);
             this.tbgEmpresas.TabIndex = 1;
             this.tbgEmpresas.Text = "Empresas";
             this.tbgEmpresas.UseVisualStyleBackColor = true;
@@ -464,7 +467,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage1.Size = new System.Drawing.Size(1167, 554);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Horários";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -534,7 +537,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage2.Size = new System.Drawing.Size(1167, 554);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Funções";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -604,7 +607,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage3.Size = new System.Drawing.Size(1167, 554);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Departamentos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -674,7 +677,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage4.Size = new System.Drawing.Size(1167, 554);
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "Funcionários";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -744,7 +747,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage5.Size = new System.Drawing.Size(1167, 554);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Motivos de Demissão";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -825,7 +828,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage6.Size = new System.Drawing.Size(1167, 554);
             this.tabPage6.TabIndex = 7;
             this.tabPage6.Text = "Afastamentos";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -987,7 +990,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage7.Size = new System.Drawing.Size(1167, 554);
             this.tabPage7.TabIndex = 8;
             this.tabPage7.Text = "Justificativas";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1059,7 +1062,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage8.Size = new System.Drawing.Size(1167, 554);
             this.tabPage8.TabIndex = 9;
             this.tabPage8.Text = "Perguntas Adicionais";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1159,7 +1162,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage9.Size = new System.Drawing.Size(1167, 554);
             this.tabPage9.TabIndex = 10;
             this.tabPage9.Text = "Batidas";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1346,7 +1349,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage10.Size = new System.Drawing.Size(1167, 554);
             this.tabPage10.TabIndex = 11;
             this.tabPage10.Text = "Pendências";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -1434,7 +1437,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1064, 453);
+            this.tabPage11.Size = new System.Drawing.Size(1167, 554);
             this.tabPage11.TabIndex = 12;
             this.tabPage11.Text = "Equipamentos";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -1459,6 +1462,9 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.chk_FonteDeDadosPorId);
+            this.tabPage12.Controls.Add(this.txtFonteDadosId);
+            this.tabPage12.Controls.Add(this.label49);
             this.tabPage12.Controls.Add(this.label45);
             this.tabPage12.Controls.Add(this.txtFonteDadosFuncionarioCpf);
             this.tabPage12.Controls.Add(this.label41);
@@ -1484,23 +1490,67 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1064, 474);
+            this.tabPage12.Size = new System.Drawing.Size(1061, 554);
             this.tabPage12.TabIndex = 13;
             this.tabPage12.Text = "Fonte de Dados";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // chk_FonteDeDadosPorId
+            // 
+            this.chk_FonteDeDadosPorId.AutoSize = true;
+            this.chk_FonteDeDadosPorId.Location = new System.Drawing.Point(14, 271);
+            this.chk_FonteDeDadosPorId.Name = "chk_FonteDeDadosPorId";
+            this.chk_FonteDeDadosPorId.Size = new System.Drawing.Size(177, 17);
+            this.chk_FonteDeDadosPorId.TabIndex = 89;
+            this.chk_FonteDeDadosPorId.Text = "Filtrar por ID da Fonte de Dados";
+            this.chk_FonteDeDadosPorId.UseVisualStyleBackColor = true;
+            this.chk_FonteDeDadosPorId.CheckedChanged += new System.EventHandler(this.chk_FonteDeDadosPorId_CheckedChanged);
+            // 
+            // txtFonteDadosId
+            // 
+            this.txtFonteDadosId.Enabled = false;
+            this.txtFonteDadosId.Location = new System.Drawing.Point(124, 298);
+            this.txtFonteDadosId.Name = "txtFonteDadosId";
+            this.txtFonteDadosId.Size = new System.Drawing.Size(187, 20);
+            this.txtFonteDadosId.TabIndex = 88;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(11, 298);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(97, 13);
+            this.label49.TabIndex = 87;
+            this.label49.Text = "ID Fonte de Dados";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(11, 475);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 13);
+            this.label45.TabIndex = 86;
+            this.label45.Text = "Número CPF";
+            // 
+            // txtFonteDadosFuncionarioCpf
+            // 
+            this.txtFonteDadosFuncionarioCpf.Location = new System.Drawing.Point(124, 468);
+            this.txtFonteDadosFuncionarioCpf.Name = "txtFonteDadosFuncionarioCpf";
+            this.txtFonteDadosFuncionarioCpf.Size = new System.Drawing.Size(187, 20);
+            this.txtFonteDadosFuncionarioCpf.TabIndex = 85;
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(19, 446);
+            this.label41.Location = new System.Drawing.Point(11, 527);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(40, 13);
             this.label41.TabIndex = 84;
             this.label41.Text = "Origem";
             // 
             // txtFonteDadosOrigem
-            // 
-            this.txtFonteDadosOrigem.Location = new System.Drawing.Point(132, 439);
+            //             
+            this.txtFonteDadosOrigem.Location = new System.Drawing.Point(124, 520);
             this.txtFonteDadosOrigem.Name = "txtFonteDadosOrigem";
             this.txtFonteDadosOrigem.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosOrigem.TabIndex = 83;
@@ -1508,7 +1558,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(19, 420);
+            this.label44.Location = new System.Drawing.Point(11, 501);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(83, 13);
             this.label44.TabIndex = 82;
@@ -1517,7 +1567,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(340, 339);
+            this.label46.Location = new System.Drawing.Point(332, 420);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(38, 13);
             this.label46.TabIndex = 80;
@@ -1525,7 +1575,7 @@
             // 
             // txtFonteDadosEquipamentoId
             // 
-            this.txtFonteDadosEquipamentoId.Location = new System.Drawing.Point(132, 413);
+            this.txtFonteDadosEquipamentoId.Location = new System.Drawing.Point(124, 494);
             this.txtFonteDadosEquipamentoId.Name = "txtFonteDadosEquipamentoId";
             this.txtFonteDadosEquipamentoId.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosEquipamentoId.TabIndex = 79;
@@ -1533,7 +1583,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(19, 368);
+            this.label47.Location = new System.Drawing.Point(11, 449);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(64, 13);
             this.label47.TabIndex = 78;
@@ -1541,7 +1591,7 @@
             // 
             // txtFonteDadosFuncionarioPis
             // 
-            this.txtFonteDadosFuncionarioPis.Location = new System.Drawing.Point(132, 361);
+            this.txtFonteDadosFuncionarioPis.Location = new System.Drawing.Point(124, 442);
             this.txtFonteDadosFuncionarioPis.Name = "txtFonteDadosFuncionarioPis";
             this.txtFonteDadosFuncionarioPis.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosFuncionarioPis.TabIndex = 77;
@@ -1549,7 +1599,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(19, 342);
+            this.label48.Location = new System.Drawing.Point(11, 423);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(49, 13);
             this.label48.TabIndex = 76;
@@ -1557,7 +1607,7 @@
             // 
             // txtFonteDadosHoraFim
             // 
-            this.txtFonteDadosHoraFim.Location = new System.Drawing.Point(132, 335);
+            this.txtFonteDadosHoraFim.Location = new System.Drawing.Point(124, 416);
             this.txtFonteDadosHoraFim.Name = "txtFonteDadosHoraFim";
             this.txtFonteDadosHoraFim.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosHoraFim.TabIndex = 75;
@@ -1565,7 +1615,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(340, 316);
+            this.label40.Location = new System.Drawing.Point(332, 397);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(38, 13);
             this.label40.TabIndex = 74;
@@ -1574,7 +1624,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(19, 316);
+            this.label39.Location = new System.Drawing.Point(11, 397);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(58, 13);
             this.label39.TabIndex = 73;
@@ -1583,7 +1633,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(340, 290);
+            this.label37.Location = new System.Drawing.Point(332, 371);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(61, 13);
             this.label37.TabIndex = 72;
@@ -1592,7 +1642,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(340, 261);
+            this.label38.Location = new System.Drawing.Point(332, 342);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(61, 13);
             this.label38.TabIndex = 71;
@@ -1600,7 +1650,7 @@
             // 
             // txtFonteDadosHoraInicio
             // 
-            this.txtFonteDadosHoraInicio.Location = new System.Drawing.Point(132, 309);
+            this.txtFonteDadosHoraInicio.Location = new System.Drawing.Point(124, 390);
             this.txtFonteDadosHoraInicio.Name = "txtFonteDadosHoraInicio";
             this.txtFonteDadosHoraInicio.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosHoraInicio.TabIndex = 64;
@@ -1608,7 +1658,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(19, 290);
+            this.label42.Location = new System.Drawing.Point(11, 371);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(49, 13);
             this.label42.TabIndex = 63;
@@ -1616,7 +1666,7 @@
             // 
             // txtFonteDadosDataFim
             // 
-            this.txtFonteDadosDataFim.Location = new System.Drawing.Point(132, 283);
+            this.txtFonteDadosDataFim.Location = new System.Drawing.Point(124, 364);
             this.txtFonteDadosDataFim.Name = "txtFonteDadosDataFim";
             this.txtFonteDadosDataFim.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosDataFim.TabIndex = 62;
@@ -1624,7 +1674,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(19, 264);
+            this.label43.Location = new System.Drawing.Point(11, 345);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(58, 13);
             this.label43.TabIndex = 61;
@@ -1632,7 +1682,7 @@
             // 
             // txtFonteDadosDataInicio
             // 
-            this.txtFonteDadosDataInicio.Location = new System.Drawing.Point(132, 257);
+            this.txtFonteDadosDataInicio.Location = new System.Drawing.Point(124, 338);
             this.txtFonteDadosDataInicio.Name = "txtFonteDadosDataInicio";
             this.txtFonteDadosDataInicio.Size = new System.Drawing.Size(187, 20);
             this.txtFonteDadosDataInicio.TabIndex = 60;
@@ -1655,33 +1705,17 @@
             this.dgvFonteDados.Size = new System.Drawing.Size(965, 193);
             this.dgvFonteDados.TabIndex = 32;
             // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(19, 394);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(67, 13);
-            this.label45.TabIndex = 86;
-            this.label45.Text = "Número CPF";
-            // 
-            // txtFonteDadosFuncionarioCpf
-            // 
-            this.txtFonteDadosFuncionarioCpf.Location = new System.Drawing.Point(132, 387);
-            this.txtFonteDadosFuncionarioCpf.Name = "txtFonteDadosFuncionarioCpf";
-            this.txtFonteDadosFuncionarioCpf.Size = new System.Drawing.Size(187, 20);
-            this.txtFonteDadosFuncionarioCpf.TabIndex = 85;
-            // 
             // frmExemplo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 524);
+            this.ClientSize = new System.Drawing.Size(1093, 604);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmExemplo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ponto Secullum Web - Exemplo de Integração Externa";            
+            this.Text = "Ponto Secullum Web - Exemplo de Integração Externa";
             this.tabControl1.ResumeLayout(false);
             this.tbgContaSecullum.ResumeLayout(false);
             this.tbgContaSecullum.PerformLayout();
@@ -1878,6 +1912,9 @@
         private System.Windows.Forms.TextBox txtFonteDadosOrigem;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtFonteDadosFuncionarioCpf;
+        private System.Windows.Forms.CheckBox chk_FonteDeDadosPorId;
+        private System.Windows.Forms.TextBox txtFonteDadosId;
+        private System.Windows.Forms.Label label49;
     }
 }
 
