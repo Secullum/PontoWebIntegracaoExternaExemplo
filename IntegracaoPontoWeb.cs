@@ -440,11 +440,7 @@ namespace PontoWebIntegracaoExterna
 
         public List<FonteDados> ListarFonteDadosPorId(string fonteDadosId)
         {
-            var query = new StringBuilder();
-
-            query.Append($"FonteDadosId={fonteDadosId}");                       
-
-            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDados/APartirDoId?{query}", "GET");
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDados/APartirDoId?FonteDadosId={fonteDadosId}", "GET");
 
             if (respHttp.CodigoHttp == HttpStatusCode.OK)
             {
