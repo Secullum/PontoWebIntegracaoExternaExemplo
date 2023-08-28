@@ -444,7 +444,7 @@ namespace PontoWebIntegracaoExterna
 
             query.Append($"FonteDadosId={fonteDadosId}");                       
 
-            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDadosId?{query}", "GET");
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDados/APartirDoId?{query}", "GET");
 
             if (respHttp.CodigoHttp == HttpStatusCode.OK)
             {
