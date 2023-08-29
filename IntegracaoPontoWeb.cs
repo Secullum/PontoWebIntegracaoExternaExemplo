@@ -438,6 +438,18 @@ namespace PontoWebIntegracaoExterna
             throw new Exception(respHttp.Conteudo);
         }
 
+        public List<FonteDados> ListarFonteDadosPorId(string fonteDadosId)
+        {
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"FonteDados/APartirDoId?FonteDadosId={fonteDadosId}", "GET");
+
+            if (respHttp.CodigoHttp == HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<FonteDados>>(respHttp.Conteudo);
+            }
+
+            throw new Exception(respHttp.Conteudo);
+        }
+
         private RespostaRequisicao FazRequisicaoHttp(TipoWebServiceSecullum webservice, string endereco, string metodo, object dados = null)
         {
             try
