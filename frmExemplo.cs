@@ -165,7 +165,7 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(string.Empty);
+                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios();
                 }
             }
             catch (Exception ex)

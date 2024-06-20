@@ -192,11 +192,13 @@ namespace PontoWebIntegracaoExterna
 
         internal object ListarAfastamentos(string inicio, string fim, string pis = null, string cpf = null)
         {
-            var parametos = $"FuncionariosAfastamentos?dataInicio={inicio}&dataFim={fim}";
+            var parametos = $"FuncionariosAfastamentos";
 
             parametos += string.IsNullOrEmpty(cpf)
-                ? "&funcionarioPis" + pis
-                : "&funcionarioCpf" + cpf;
+                ? "?funcionarioPis" + pis
+                : "/Cpf?funcionarioCpf" + cpf;
+
+            parametos += $"&dataInicio ={inicio}&dataFim ={fim}";
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametos, "GET");
 
@@ -311,11 +313,13 @@ namespace PontoWebIntegracaoExterna
 
         internal string ExcluirAfastamento(string inicio, string fim, string pis = null, string cpf = null)
         {
-            var parametos = $"FuncionariosAfastamentos?dataInicio={inicio}&dataFim={fim}";
+            var parametos = $"FuncionariosAfastamentos";
 
             parametos += string.IsNullOrEmpty(cpf)
-                ? "&funcionarioPis" + pis
-                : "&funcionarioCpf" + cpf;
+                ? "?funcionarioPis" + pis
+                : "/Cpf?funcionarioCpf" + cpf;
+
+            parametos += $"&dataInicio ={inicio}&dataFim ={fim}";
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametos, "DELETE");
 
@@ -362,7 +366,7 @@ namespace PontoWebIntegracaoExterna
         {
             var parametros = string.IsNullOrEmpty(cpf)
                 ? "Funcionarios?pis=" + pis
-                : "Funcionarios?cpf=" + cpf;
+                : "Funcionarios/Cpf?cpf=" + cpf;
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "GET");
 
@@ -385,7 +389,7 @@ namespace PontoWebIntegracaoExterna
         {
             var parametros = string.IsNullOrEmpty(cpf)
                 ? "Funcionarios?pis=" + pis
-                : "Funcionarios?cpf=" + cpf;
+                : "Funcionarios/Cpf?cpf=" + cpf;
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "DELETE");
 
