@@ -165,7 +165,7 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(string.Empty);
+                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios();
                 }
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace PontoWebIntegracaoExterna
         {
             if (ConsistirDados())
             {
-                MessageBox.Show(integracao.ExcluirFuncionario(txtPis.Text));
+                MessageBox.Show(integracao.ExcluirFuncionario(txtPis.Text, textCpf.Text));
             }
         }
 
@@ -248,7 +248,7 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(txtPis.Text);
+                    dgvFuncionarios.DataSource = integracao.ListarFuncionarios(txtPis.Text, textCpf.Text);
                 }
             }
             catch (Exception ex)
@@ -308,7 +308,7 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text);
+                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text, textAtastamentoCpf.Text);
                 }
             }
             catch (Exception ex)
@@ -431,7 +431,7 @@ namespace PontoWebIntegracaoExterna
         {
             if (ConsistirDados())
             {
-                MessageBox.Show(integracao.ExcluirAfastamento(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text));
+                MessageBox.Show(integracao.ExcluirAfastamento(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text, txtAfastamentoFuncionarioPis.Text, textAtastamentoCpf.Text));
             }
         }
 
@@ -560,13 +560,13 @@ namespace PontoWebIntegracaoExterna
             {
                 txtFonteDadosId.Text = string.Empty;
                 txtFonteDadosId.Enabled = false;
-                txtFonteDadosDataInicio.Enabled = true;                
+                txtFonteDadosDataInicio.Enabled = true;
                 txtFonteDadosDataFim.Enabled = true;
                 txtFonteDadosHoraInicio.Enabled = true;
-                txtFonteDadosHoraFim.Enabled = true;                
-                txtFonteDadosFuncionarioPis.Enabled = true;   
-                txtFonteDadosFuncionarioCpf.Enabled = true;                
-                txtFonteDadosEquipamentoId.Enabled = true;                
+                txtFonteDadosHoraFim.Enabled = true;
+                txtFonteDadosFuncionarioPis.Enabled = true;
+                txtFonteDadosFuncionarioCpf.Enabled = true;
+                txtFonteDadosEquipamentoId.Enabled = true;
                 txtFonteDadosOrigem.Enabled = true;
             }
         }
