@@ -497,7 +497,7 @@ namespace PontoWebIntegracaoExterna
                 {
                     request.ContentType = "application/json; charset=utf-8";
                     request.Headers["Accept-Language"] = "pt-BR";
-                    request.Headers["secullumbancoselecionado"] = BancoPontoWebSelecionado;
+                    request.Headers["secullumidbancoselecionado"] = BancoPontoWebSelecionado;
                 }
 
                 if (!string.IsNullOrEmpty(AccessTokenSelecionado))

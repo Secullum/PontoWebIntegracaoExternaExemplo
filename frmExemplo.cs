@@ -62,7 +62,7 @@ namespace PontoWebIntegracaoExterna
                 txtCS_NomeUsuario.Text = resp.nome;
 
                 cboCS_Bancos.DisplayMember = "nome";
-                cboCS_Bancos.ValueMember = "identificador";
+                cboCS_Bancos.ValueMember = "id";
                 cboCS_Bancos.DataSource = new BindingSource(resp.listaBancos, null);
             }
         }
@@ -491,9 +491,9 @@ namespace PontoWebIntegracaoExterna
             integracao.BancoPontoWebSelecionado = cboCS_Bancos.SelectedValue.ToString();
         }
 
-        private void btnListarEquipamentos_Click(object sender, EventArgs e)
-        {
-            try
+       private void btnListarEquipamentos_Click(object sender, EventArgs e)
+       {
+           try
             {
                 if (ConsistirDados())
                 {
@@ -504,10 +504,10 @@ namespace PontoWebIntegracaoExterna
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void btnFonteDadosListar_Click(object sender, EventArgs e)
-        {
-            try
+       }
+       private void btnFonteDadosListar_Click(object sender, EventArgs e)
+       {
+           try
             {
                 if (!chk_FonteDeDadosPorId.Checked && ConsistirDados())
                 {
@@ -524,51 +524,51 @@ namespace PontoWebIntegracaoExterna
                     });
                 }
                 else
-                {
-                    dgvFonteDados.DataSource = integracao.ListarFonteDadosPorId(txtFonteDadosId.Text);
-                }
+               {
+                   dgvFonteDados.DataSource = integracao.ListarFonteDadosPorId(txtFonteDadosId.Text);
+               }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+       }
 
-        private void chk_FonteDeDadosPorId_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_FonteDeDadosPorId.Checked)
-            {
-                txtFonteDadosId.Enabled = true;
-                txtFonteDadosDataInicio.Text = string.Empty;
-                txtFonteDadosDataInicio.Enabled = false;
-                txtFonteDadosDataFim.Text = string.Empty;
-                txtFonteDadosDataFim.Enabled = false;
-                txtFonteDadosHoraInicio.Text = string.Empty;
-                txtFonteDadosHoraInicio.Enabled = false;
-                txtFonteDadosHoraFim.Text = string.Empty;
-                txtFonteDadosHoraFim.Enabled = false;
-                txtFonteDadosFuncionarioPis.Text = string.Empty;
-                txtFonteDadosFuncionarioPis.Enabled = false;
-                txtFonteDadosFuncionarioCpf.Text = string.Empty;
-                txtFonteDadosFuncionarioCpf.Enabled = false;
-                txtFonteDadosEquipamentoId.Text = string.Empty;
-                txtFonteDadosEquipamentoId.Enabled = false;
-                txtFonteDadosOrigem.Text = string.Empty;
-                txtFonteDadosOrigem.Enabled = false;
-            }
-            else
-            {
-                txtFonteDadosId.Text = string.Empty;
-                txtFonteDadosId.Enabled = false;
-                txtFonteDadosDataInicio.Enabled = true;
-                txtFonteDadosDataFim.Enabled = true;
-                txtFonteDadosHoraInicio.Enabled = true;
-                txtFonteDadosHoraFim.Enabled = true;
-                txtFonteDadosFuncionarioPis.Enabled = true;
-                txtFonteDadosFuncionarioCpf.Enabled = true;
-                txtFonteDadosEquipamentoId.Enabled = true;
-                txtFonteDadosOrigem.Enabled = true;
-            }
-        }
-    }
+       private void chk_FonteDeDadosPorId_CheckedChanged(object sender, EventArgs e)
+       {
+           if (chk_FonteDeDadosPorId.Checked)
+           {
+               txtFonteDadosId.Enabled = true;
+               txtFonteDadosDataInicio.Text = string.Empty;
+               txtFonteDadosDataInicio.Enabled = false;
+               txtFonteDadosDataFim.Text = string.Empty;
+               txtFonteDadosDataFim.Enabled = false;
+               txtFonteDadosHoraInicio.Text = string.Empty;
+               txtFonteDadosHoraInicio.Enabled = false;
+               txtFonteDadosHoraFim.Text = string.Empty;
+               txtFonteDadosHoraFim.Enabled = false;
+               txtFonteDadosFuncionarioPis.Text = string.Empty;
+               txtFonteDadosFuncionarioPis.Enabled = false;
+               txtFonteDadosFuncionarioCpf.Text = string.Empty;
+               txtFonteDadosFuncionarioCpf.Enabled = false;
+               txtFonteDadosEquipamentoId.Text = string.Empty;
+               txtFonteDadosEquipamentoId.Enabled = false;
+               txtFonteDadosOrigem.Text = string.Empty;
+               txtFonteDadosOrigem.Enabled = false;
+           }
+           else
+           {
+               txtFonteDadosId.Text = string.Empty;
+               txtFonteDadosId.Enabled = false;
+               txtFonteDadosDataInicio.Enabled = true;
+               txtFonteDadosDataFim.Enabled = true;
+               txtFonteDadosHoraInicio.Enabled = true;
+               txtFonteDadosHoraFim.Enabled = true;
+               txtFonteDadosFuncionarioPis.Enabled = true;
+               txtFonteDadosFuncionarioCpf.Enabled = true;
+               txtFonteDadosEquipamentoId.Enabled = true;
+               txtFonteDadosOrigem.Enabled = true;
+           }
+       }
+   }
 }
