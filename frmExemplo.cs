@@ -62,7 +62,7 @@ namespace PontoWebIntegracaoExterna
                 txtCS_NomeUsuario.Text = resp.nome;
 
                 cboCS_Bancos.DisplayMember = "nome";
-                cboCS_Bancos.ValueMember = "identificador";
+                cboCS_Bancos.ValueMember = "id";
                 cboCS_Bancos.DataSource = new BindingSource(resp.listaBancos, null);
             }
         }
@@ -505,6 +505,7 @@ namespace PontoWebIntegracaoExterna
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnFonteDadosListar_Click(object sender, EventArgs e)
         {
             try
