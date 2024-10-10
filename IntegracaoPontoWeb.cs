@@ -478,6 +478,12 @@ namespace PontoWebIntegracaoExterna
         {
             try
             {
+                const SecurityProtocolType SECURITY_PROTOCOL_TYPE_TLS12 = (SecurityProtocolType)0xC00;
+
+                //Para utilizar a integração externa, é necessário que as requisições sejam
+                //feitas com o protocolo TLS(Transport Layer Security) na versão 1.2 ou superior.
+                ServicePointManager.SecurityProtocol = SECURITY_PROTOCOL_TYPE_TLS12;
+
                 var url = (webservice == TipoWebServiceSecullum.Autenticador ? ENDERECO_AUTENTICADOR : ENDERECO_PONTOWEB) + endereco;
 
                 RespostaRequisicao resposta = new RespostaRequisicao();

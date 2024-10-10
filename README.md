@@ -1,6 +1,7 @@
 # Exemplo de Integração Externa com Ponto Secullum Web
 Esta é uma aplicação de exemplo para integração de dados via *webservice* com o [Ponto Secullum Web](https://pontoweb.secullum.com.br/).
 Foi desenvolvida em *C# Winforms* usando *Framework 4.5*.
+Para utilizar a integração externa, é necessário que as requisições sejam feitas com o protocolo TLS(Transport Layer Security) na versão 1.2 ou superior.
 
 # Interface baseada em OpenApi
 Neste [link](https://pontowebintegracaoexterna.secullum.com.br/docs/) está disponível uma interface para testes das requisições.
