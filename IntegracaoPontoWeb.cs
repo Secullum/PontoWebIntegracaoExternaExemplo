@@ -476,6 +476,8 @@ namespace PontoWebIntegracaoExterna
 
         private RespostaRequisicao FazRequisicaoHttp(TipoWebServiceSecullum webservice, string endereco, string metodo, object dados = null)
         {
+            DefinirSecurityProtocol();
+
             try
             {
                 var url = (webservice == TipoWebServiceSecullum.Autenticador ? ENDERECO_AUTENTICADOR : ENDERECO_PONTOWEB) + endereco;
@@ -590,6 +592,16 @@ namespace PontoWebIntegracaoExterna
         private string CriarMensagemExclusao(string text)
         {
             return $"{text} excluído com êxito";
+        }
+
+        public void DefinirSecurityProtocol()
+        {
+            const SecurityProtocolType SECURITY_PROTOCOL_TYPE_TLS12 = (SecurityProtocolType)0xC00;
+
+            //Sec-issues#10667: Definimos o protocolo TLS 1.2 para comunicação com o servidor,
+            //pois os protocolos TLS 1.0 e 1.1 foram descontinuados nos serviços da Azure.
+            //Estamos usando fixo o TLS 1.2, pois o TLS 1.3 não é suportado no Windows 7.
+            ServicePointManager.SecurityProtocol = SECURITY_PROTOCOL_TYPE_TLS12;
         }
     }
 }
