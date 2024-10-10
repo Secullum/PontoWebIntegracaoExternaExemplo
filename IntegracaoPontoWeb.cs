@@ -597,20 +597,11 @@ namespace PontoWebIntegracaoExterna
         public void DefinirSecurityProtocol()
         {
             const SecurityProtocolType SECURITY_PROTOCOL_TYPE_TLS12 = (SecurityProtocolType)0xC00;
-            const SecurityProtocolType SECURITY_PROTOCOL_TYPE_TLS13 = (SecurityProtocolType)0x3000;
 
-            if (Environment.OSVersion.Version.Major == 6 && Environment.OSVersion.Version.Minor == 1)
-            {
-                //Sec-issues#10667: Máquinas com Windows 7 ou Windows Server 2008 R2 não reconhecem o TLS 1.3,
-                //portanto usamos fixo o TLS 1.2, para não ocorrer erro ao iniciar o agente
-                ServicePointManager.SecurityProtocol = SECURITY_PROTOCOL_TYPE_TLS12;
-            }
-            else
-            {
-                //Sec-issues#10667 Definimos os protocolos TLS 1.2 e 1.3 para comunicação com o servidor,
-                //pois os protocolos TLS 1.0 e 1.1 foram descontinuados nos serviços da Azure.
-                ServicePointManager.SecurityProtocol = SECURITY_PROTOCOL_TYPE_TLS12 | SECURITY_PROTOCOL_TYPE_TLS13;
-            }
+            //Sec-issues#10667: Definimos o protocolo TLS 1.2 para comunicação com o servidor,
+            //pois os protocolos TLS 1.0 e 1.1 foram descontinuados nos serviços da Azure.
+            //Estamos usando fixo o TLS 1.2, pois o TLS 1.3 não é suportado no Windows 7.
+            ServicePointManager.SecurityProtocol = SECURITY_PROTOCOL_TYPE_TLS12;
         }
     }
 }
