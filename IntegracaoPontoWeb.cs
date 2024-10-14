@@ -137,14 +137,14 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Funcoes?descricao=" + text, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Função {text}");
         }
 
         internal string ExcluirHorario(string text)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Horarios?numero=" + text, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Horário {text}");
         }
 
         internal List<dynamic> ListarDepartamentos(string descricao)
@@ -163,7 +163,7 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Departamentos?descricao=" + text, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Departamento {text}");
         }
 
         internal List<dynamic> ListarMotivosDemissao(string descricao)
@@ -178,9 +178,13 @@ namespace PontoWebIntegracaoExterna
             throw new Exception(respHttp.Conteudo);
         }
 
-        internal object ListarAfastamentos()
+        internal object ListarAfastamentos(string inicio, string fim)
         {
-            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "FuncionariosAfastamentos", "GET");
+            var parametros = $"FuncionariosAfastamentos";
+
+            parametros += $"?dataInicio={inicio}&dataFim={fim}";
+
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "GET");
 
             if (respHttp.CodigoHttp == HttpStatusCode.OK)
             {
@@ -192,15 +196,15 @@ namespace PontoWebIntegracaoExterna
 
         internal object ListarAfastamentos(string inicio, string fim, string pis = null, string cpf = null)
         {
-            var parametos = $"FuncionariosAfastamentos";
+            var parametros = $"FuncionariosAfastamentos";
 
-            parametos += string.IsNullOrEmpty(cpf)
-                ? "?funcionarioPis" + pis
-                : "/Cpf?funcionarioCpf" + cpf;
+            parametros += $"?dataInicio={inicio}&dataFim={fim}";
 
-            parametos += $"&dataInicio ={inicio}&dataFim ={fim}";
+            parametros += string.IsNullOrEmpty(cpf)
+                ? "&funcionarioPis=" + pis
+                : "&funcionarioCpf=" + cpf;
 
-            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametos, "GET");
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "GET");
 
             if (respHttp.CodigoHttp == HttpStatusCode.OK)
             {
@@ -260,6 +264,12 @@ namespace PontoWebIntegracaoExterna
                 query.Append($"funcionarioPis={filtro.FuncionarioPis}");
             }
 
+            if (!string.IsNullOrEmpty(filtro.FuncionarioCpf))
+            {
+                query.Append("&");
+                query.Append($"funcionarioCpf={filtro.FuncionarioCpf}");
+            }
+
             if (!string.IsNullOrEmpty(filtro.EmpresaDocumento))
             {
                 query.Append("&");
@@ -280,48 +290,48 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "FuncionariosAfastamentos", "POST", dados);
 
-            return respHttp.Conteudo;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemSalvamento("Afastamento");
         }
 
         internal string SalvarPendenciaProcessada(PendenciaProcessada dados)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Pendencias", "POST", dados);
 
-            return respHttp.Conteudo;
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemSalvamento("Pendência");
         }
 
         internal string ExcluirMotivoDemissao(string text)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "MotivosDemissao?descricao=" + text, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Motivo de demissão {text}");
         }
 
         internal string ExcluirJustificativa(string text)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Justificativas?descricao=" + text, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(text);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Justificativa {text}");
         }
 
         internal string ExcluirPerguntaAdicional(string descricao, string grupo)
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, $"PerguntasAdicionais?descricao={descricao}&grupo={grupo}", "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(descricao);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Pergunta Adicional {descricao}");
         }
 
         internal string ExcluirAfastamento(string inicio, string fim, string pis = null, string cpf = null)
         {
-            var parametos = $"FuncionariosAfastamentos";
+            var parametros = $"FuncionariosAfastamentos";
 
-            parametos += string.IsNullOrEmpty(cpf)
-                ? "?funcionarioPis" + pis
-                : "/Cpf?funcionarioCpf" + cpf;
+            parametros += string.IsNullOrEmpty(cpf)
+                ? "?funcionarioPis=" + pis
+                : "funcionarioCpf=" + cpf;
 
-            parametos += $"&dataInicio ={inicio}&dataFim ={fim}";
+            parametros += $"&dataInicio={inicio}&dataFim={fim}";
 
-            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametos, "DELETE");
+            var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "DELETE");
 
             return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao("Afastamento");
         }
@@ -382,7 +392,7 @@ namespace PontoWebIntegracaoExterna
         {
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, "Empresas?cnpjCpf=" + cnpj, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(cnpj);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao($"Empresa {cnpj}");
         }
 
         internal string ExcluirFuncionario(string pis = null, string cpf = null)
@@ -393,7 +403,7 @@ namespace PontoWebIntegracaoExterna
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "DELETE");
 
-            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao(pis);
+            return respHttp.CodigoHttp != HttpStatusCode.OK ? respHttp.Conteudo : CriarMensagemExclusao("Funcionário " + (string.IsNullOrEmpty(cpf) ? pis : cpf));
         }
 
         public List<Equipamento> ListarEquipamentos()
@@ -596,6 +606,11 @@ namespace PontoWebIntegracaoExterna
         private string CriarMensagemExclusao(string text)
         {
             return $"{text} excluído com êxito";
+        }
+
+        private string CriarMensagemSalvamento(string text)
+        {
+            return $"{text} salvo com êxito";
         }
     }
 }
