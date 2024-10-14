@@ -198,11 +198,11 @@ namespace PontoWebIntegracaoExterna
         {
             var parametros = $"FuncionariosAfastamentos";
 
-            parametros += $"?dataInicio={inicio}&dataFim={fim}";
-
             parametros += string.IsNullOrEmpty(cpf)
-                ? "&funcionarioPis=" + pis
-                : "&funcionarioCpf=" + cpf;
+                ? "?funcionarioPis=" + pis
+                : "/Cpf?funcionarioCpf=" + cpf;
+
+            parametros += $"&dataInicio={inicio}&dataFim={fim}";
 
             var respHttp = FazRequisicaoHttp(TipoWebServiceSecullum.PontoWeb, parametros, "GET");
 
@@ -327,7 +327,7 @@ namespace PontoWebIntegracaoExterna
 
             parametros += string.IsNullOrEmpty(cpf)
                 ? "?funcionarioPis=" + pis
-                : "funcionarioCpf=" + cpf;
+                : "/Cpf?funcionarioCpf=" + cpf;
 
             parametros += $"&dataInicio={inicio}&dataFim={fim}";
 
