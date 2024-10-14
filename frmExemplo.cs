@@ -293,7 +293,7 @@ namespace PontoWebIntegracaoExterna
             {
                 if (ConsistirDados())
                 {
-                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos();
+                    dgvAfastamentos.DataSource = integracao.ListarAfastamentos(txtAfastamentoDataInicio.Text, txtAfastamentoDataFim.Text);
                 }
             }
             catch (Exception ex)
@@ -390,6 +390,7 @@ namespace PontoWebIntegracaoExterna
                         HoraInicio = txtBatidasHoraInicio.Text,
                         HoraFim = txtBatidasHoraFim.Text,
                         FuncionarioPis = txtBatidasFuncionarioPis.Text,
+                        FuncionarioCpf = txtBatidasFuncionarioCpf.Text,
                         EmpresaDocumento = txtBatidasEmpresaDocumento.Text
                     });
                 }
@@ -407,11 +408,13 @@ namespace PontoWebIntegracaoExterna
                 return;
             }
 
-            var dados = new Afastamento()
+            var dados = new Afastamento
             {
                 NumeroPis = txtAfastamentoFuncionarioPis.Text,
+                Cpf = textAtastamentoCpf.Text,
                 Inicio = Convert.ToDateTime(txtAfastamentoDataInicio.Text),
                 Fim = Convert.ToDateTime(txtAfastamentoDataFim.Text),
+                DataInclusao = Convert.ToDateTime(txtDataInclusao.Text),
                 JustificativaNome = txtAfastamentoJustificativaNome.Text,
                 Motivo = txtAfastamentoMotivo.Text
             };
@@ -570,6 +573,31 @@ namespace PontoWebIntegracaoExterna
                 txtFonteDadosEquipamentoId.Enabled = true;
                 txtFonteDadosOrigem.Enabled = true;
             }
+        }
+
+        private void tbgEmpresas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvFuncoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvFuncionarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvMotivosDemissao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvEquipamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
