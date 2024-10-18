@@ -7,6 +7,7 @@
         public string HoraInicio { get; set; }
         public string HoraFim { get; set; }
         public string FuncionarioPis { get; set; }
+        public string FuncionarioCpf { get; set; }
         public string EmpresaDocumento { get; set; }
     }
 }
