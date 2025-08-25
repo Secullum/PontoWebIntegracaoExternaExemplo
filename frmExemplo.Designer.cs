@@ -35,6 +35,7 @@
             this.btnCS_Autenticar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbgContaSecullum = new System.Windows.Forms.TabPage();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.txtCS_NomeUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboCS_Bancos = new System.Windows.Forms.ComboBox();
@@ -89,6 +90,9 @@
             this.button17 = new System.Windows.Forms.Button();
             this.dgvMotivosDemissao = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtDataInclusao = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.textAtastamentoCpf = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -187,9 +191,6 @@
             this.txtFonteDadosDataInicio = new System.Windows.Forms.TextBox();
             this.btnFonteDadosListar = new System.Windows.Forms.Button();
             this.dgvFonteDados = new System.Windows.Forms.DataGridView();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtDataInclusao = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbgContaSecullum.SuspendLayout();
             this.tbgEmpresas.SuspendLayout();
@@ -290,6 +291,7 @@
             // 
             // tbgContaSecullum
             // 
+            this.tbgContaSecullum.Controls.Add(this.lblAviso);
             this.tbgContaSecullum.Controls.Add(this.txtCS_NomeUsuario);
             this.tbgContaSecullum.Controls.Add(this.label6);
             this.tbgContaSecullum.Controls.Add(this.cboCS_Bancos);
@@ -311,6 +313,18 @@
             this.tbgContaSecullum.TabIndex = 0;
             this.tbgContaSecullum.Text = "Conta Secullum";
             this.tbgContaSecullum.UseVisualStyleBackColor = true;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.Location = new System.Drawing.Point(310, 148);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(397, 20);
+            this.lblAviso.TabIndex = 13;
+            this.lblAviso.Text = "ATENÇÃO: Não compartilhe este código com ninguém!";
+            this.lblAviso.Visible = false;
             // 
             // txtCS_NomeUsuario
             // 
@@ -875,6 +889,31 @@
             this.tabPage6.TabIndex = 7;
             this.tabPage6.Text = "Afastamentos";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(888, 312);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(61, 13);
+            this.label55.TabIndex = 63;
+            this.label55.Text = "yyyy-mm-dd";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(566, 316);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(73, 13);
+            this.label54.TabIndex = 62;
+            this.label54.Text = "Data Inclusão";
+            // 
+            // txtDataInclusao
+            // 
+            this.txtDataInclusao.Location = new System.Drawing.Point(680, 309);
+            this.txtDataInclusao.Name = "txtDataInclusao";
+            this.txtDataInclusao.Size = new System.Drawing.Size(187, 20);
+            this.txtDataInclusao.TabIndex = 61;
             // 
             // label51
             // 
@@ -1800,31 +1839,6 @@
             this.dgvFonteDados.Size = new System.Drawing.Size(1025, 193);
             this.dgvFonteDados.TabIndex = 32;
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(566, 316);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(73, 13);
-            this.label54.TabIndex = 62;
-            this.label54.Text = "Data Inclusão";
-            // 
-            // txtDataInclusao
-            // 
-            this.txtDataInclusao.Location = new System.Drawing.Point(680, 309);
-            this.txtDataInclusao.Name = "txtDataInclusao";
-            this.txtDataInclusao.Size = new System.Drawing.Size(187, 20);
-            this.txtDataInclusao.TabIndex = 61;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(888, 312);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(61, 13);
-            this.label55.TabIndex = 63;
-            this.label55.Text = "yyyy-mm-dd";
-            // 
             // frmExemplo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2045,6 +2059,7 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TextBox txtDataInclusao;
+        private System.Windows.Forms.Label lblAviso;
     }
 }
 

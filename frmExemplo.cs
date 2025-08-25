@@ -44,6 +44,7 @@ namespace PontoWebIntegracaoExterna
             {
                 txtCS_Access_Token.Text = resp.access_token;
                 txtCS_Refresh_Token.Text = resp.refresh_token;
+                lblAviso.Visible = true;
             }
         }
 
