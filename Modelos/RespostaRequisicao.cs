@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace PontoWebIntegracaoExterna
+namespace IntegracaoExternaExemplo
 {
     class RespostaRequisicao
     {

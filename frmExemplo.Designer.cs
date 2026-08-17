@@ -1,4 +1,4 @@
-﻿namespace PontoWebIntegracaoExterna
+﻿namespace IntegracaoExternaExemplo
 {
     partial class frmExemplo
     {
@@ -1849,7 +1849,7 @@
             this.MaximizeBox = false;
             this.Name = "frmExemplo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ponto Secullum Web - Exemplo de Integração Externa";
+            this.Text = "Secullum RH - Exemplo de Integração Externa";
             this.tabControl1.ResumeLayout(false);
             this.tbgContaSecullum.ResumeLayout(false);
             this.tbgContaSecullum.PerformLayout();

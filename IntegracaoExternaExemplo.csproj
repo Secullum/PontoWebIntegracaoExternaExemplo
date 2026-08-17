@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{843D44AB-C367-4137-9F78-0B78F538CB24}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PontoWebIntegracaoExterna</RootNamespace>
-    <AssemblyName>PontoWebIntegracaoExterna</AssemblyName>
+    <RootNamespace>IntegracaoExternaExemplo</RootNamespace>
+    <AssemblyName>IntegracaoExternaExemplo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -58,7 +58,7 @@
     <Compile Include="frmExemplo.Designer.cs">
       <DependentUpon>frmExemplo.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntegracaoPontoWeb.cs" />
+    <Compile Include="IntegracaoExterna.cs" />
     <Compile Include="Modelos\Afastamento.cs" />
     <Compile Include="Modelos\AutenticacaoDadosDaContaResposta.cs" />
     <Compile Include="Modelos\Banco.cs" />
