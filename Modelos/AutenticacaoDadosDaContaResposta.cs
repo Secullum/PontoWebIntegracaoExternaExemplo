@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PontoWebIntegracaoExterna.Modelos
+namespace IntegracaoExternaExemplo.Modelos
 {
     class AutenticacaoDadosDaContaResposta
     {

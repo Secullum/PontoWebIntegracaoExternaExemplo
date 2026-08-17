@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace PontoWebIntegracaoExterna
+namespace IntegracaoExternaExemplo
 {
     static class Program
     {

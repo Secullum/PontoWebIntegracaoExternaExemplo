@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PontoWebIntegracaoExterna.Modelos
+namespace IntegracaoExternaExemplo.Modelos
 {
     public class Afastamento
     {

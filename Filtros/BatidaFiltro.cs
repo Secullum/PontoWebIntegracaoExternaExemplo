@@ -1,4 +1,4 @@
-﻿namespace PontoWebIntegracaoExterna.Filtros
+﻿namespace IntegracaoExternaExemplo.Filtros
 {
     public class BatidaFiltro
     {

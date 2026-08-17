@@ -1,13 +1,13 @@
-﻿using PontoWebIntegracaoExterna.Filtros;
-using PontoWebIntegracaoExterna.Modelos;
+﻿using IntegracaoExternaExemplo.Filtros;
+using IntegracaoExternaExemplo.Modelos;
 using System;
 using System.Windows.Forms;
 
-namespace PontoWebIntegracaoExterna
+namespace IntegracaoExternaExemplo
 {
     public partial class frmExemplo : Form
     {
-        IntegracaoPontoWeb integracao = new IntegracaoPontoWeb();
+        IntegracaoExterna integracao = new IntegracaoExterna();
 
         public frmExemplo()
         {
@@ -492,7 +492,7 @@ namespace PontoWebIntegracaoExterna
 
         private void cboCS_Bancos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            integracao.BancoPontoWebSelecionado = cboCS_Bancos.SelectedValue.ToString();
+            integracao.BancoSelecionado = cboCS_Bancos.SelectedValue.ToString();
         }
 
         private void btnListarEquipamentos_Click(object sender, EventArgs e)
