@@ -6,9 +6,10 @@ Para utilizar a integração externa, é necessário que as requisições sejam 
 # Interface baseada em OpenApi
 A documentação com [Swagger](https://pontowebintegracaoexterna.secullum.com.br/docs/) está disponível para execução e validação das requisições.
 
+Para mais informações, leia o [Manual da Integração](https://pontowebintegracaoexterna.secullum.com.br/docs/manual/index.html) atentamente para entender o fluxo de dados.
+
 #### **Importante:**
 * Para realizar a integração, será necessário uma **Conta Secullum** com pelo menos um banco de dados do **Ponto Secullum Web** ativo utilizando o plano PRO ou superior. 
 * Além disso é necessário habilitar a integração externa dentro do **Ponto Secullum Web**, via menu Manutenção > Integração com Sistemas.
-* Leia o [Manual da Integração](https://github.com/Secullum/PontoWebIntegracaoExternaExemplo/blob/master/Integracao_Externa_Ponto_Web.pdf) atentamente para entender o fluxo de dados.
   
 Em caso de dúvidas, consulte o suporte técnico.
